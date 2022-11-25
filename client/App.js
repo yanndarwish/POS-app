@@ -11,24 +11,25 @@ import Logout from "./src/pages/Logout/Logout"
 import Pos from "./src/pages/Pos/Pos"
 import Profile from "./src/pages/Profile/Profile"
 
+
 export default function App() {
+
 	return (
 		<NativeRouter>
 			<View style={styles.container}>
 				<StatusBar style="auto" />
-			<Routes>
-				<Route path="/" element={<Root />}>
-					<Route path="/" element={<Home />} />
-					<Route path="login" element={<Login />} />
-					<Route path="pos" element={<Pos />} />
-					<Route path="dashboard" element={<Dashboard />} />
-					<Route path="inventory" element={<Inventory />} />
-					<Route path="profile" element={<Profile />} />
-					<Route path="help" element={<Help />} />
-					<Route path="logout" element={<Logout />} />
-
-				</Route>
-			</Routes>
+				<Routes>
+					<Route path="/" element={<Root />}>
+						<Route path="/" element={<Home />} />
+						<Route path="login" element={<Login />} />
+						<Route path="pos" element={<Pos />} />
+						<Route path="dashboard" element={<Dashboard />} />
+						<Route path="inventory" element={<Inventory />} />
+						<Route path="profile" element={<Profile />} />
+						<Route path="help" element={<Help />} />
+						<Route path="logout" element={<Logout />} />
+					</Route>
+				</Routes>
 			</View>
 		</NativeRouter>
 	)
@@ -37,8 +38,9 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: "blue",
-		alignItems: "center",
-		justifyContent: "center",
+		backgroundColor: "red",
+    height:"100%",
+    width:"100%",
+    marginTop: 24
 	},
 })
