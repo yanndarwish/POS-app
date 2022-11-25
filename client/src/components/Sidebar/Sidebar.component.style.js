@@ -4,18 +4,27 @@ import light from "../../styles/light.theme.styles";
 import dark from "../../styles/dark.theme.styles";
 
 const theme = dark
-export default StyleSheet.create({
+export const defaultStyle = StyleSheet.create({
 	sidebar: {
 		position: "fixed",
 		top: 0,
 		left: 0,
 		width: 100,
 		borderRightWidth: 2,
-		borderRightColor: `rgba(${theme.COLOR_TEXT_RGB}, 0.15)`,
-		backgroundColor: theme.COLOR_BG_SECONDARY,
 	},
-	icon: {
-		fill: theme.COLOR_TEXT,
+	sidebarLight: {
+		borderRightColor: `rgba(${light.COLOR_TEXT_RGB}, 0.15)`,
+		backgroundColor: light.COLOR_BG_SECONDARY,
+	},
+	sidebarDark: {
+		borderRightColor: `rgba(${dark.COLOR_TEXT_RGB}, 0.15)`,
+		backgroundColor: dark.COLOR_BG_SECONDARY,
+	},
+	iconLight: {
+		fill: light.COLOR_TEXT,
+	},
+	iconDark: {
+		fill: dark.COLOR_TEXT,
 	},
 	sidebarTop: {
 		position: "relative",
@@ -31,8 +40,13 @@ export default StyleSheet.create({
 		height: 2,
 		width: "60%",
 		marginHorizontal: "20%",
-		backgroundColor: theme.COLOR_TEXT,
 		opacity: 0.15,
+	},
+	separatorLight: {
+		backgroundColor: light.COLOR_TEXT,
+	},
+	separatorDark: {
+		backgroundColor: dark.COLOR_TEXT,
 	},
 	linksContainer: {
 		height: "100%",
