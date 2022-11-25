@@ -3,7 +3,6 @@ import common from "../../styles/common.styles"
 import light from "../../styles/light.theme.styles";
 import dark from "../../styles/dark.theme.styles";
 
-const theme = dark
 export const defaultStyle = StyleSheet.create({
 	sidebar: {
 		position: "fixed",
