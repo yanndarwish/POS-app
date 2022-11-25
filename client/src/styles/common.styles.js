@@ -17,5 +17,8 @@ export default {
     FONT_ARTICLE_TITLE: 24,
     FONT_SUBTITLE: 24,
     FONT_LABEL: 16,
-    FONT_BODY: 20
+    FONT_BODY: 20,
+	// border-radius
+	BORDER_RADIUS_S: 4,
+	BORDER_RADIUS_M: 6,
 }
