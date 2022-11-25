@@ -8,5 +8,6 @@ export default {
 	COLOR_ACCENT_SHADE_2: "#7F5AF0", // use it with opacity 50% (table header)
     COLOR_ACCENT_SHADE_3: "#7F5AF0", // opacity 100% (calc nums)
     // text color 
-    COLOR_TEXT: "#000000"
+    COLOR_TEXT: "#000000",
+    COLOR_TEXT_RGB: "0,0,0"
 }

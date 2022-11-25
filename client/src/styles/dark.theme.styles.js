@@ -9,4 +9,5 @@ export default {
 	COLOR_ACCENT_SHADE_3: "#DBD1FB", // opacity 100% (calc nums)
 	// text color
 	COLOR_TEXT: "#FFFFFF",
+    COLOR_TEXT_RGB: "255,255,255",
 }
