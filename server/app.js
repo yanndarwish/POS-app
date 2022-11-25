@@ -40,9 +40,13 @@ app.post("/register", async (req, res) => {
 		}
 
 		// create token
-		const token = jwt.sign(user, process.env.TOKEN_KEY, {
-			expiresIn: "2h",
-		})
+		const token = jwt.sign(
+			{ user_id: user._id, email },
+			process.env.TOKEN_KEY,
+			{
+				expiresIn: "2h",
+			}
+		)
 
 		// save user token
 		user.token = token
@@ -67,26 +71,31 @@ app.post("/login", async (req, res) => {
 	try {
 		// get user input
 		const { email, password } = req.body
-
+		console.log(email)
 		// validate user input
 		if (!(email && password)) {
 			res.status(400).send("All inputs are required")
 		}
 
 		// validate if user exists in db
-		const foundUser = users.find((user) => user.email === email)
+		const foundUser = users.find((user) => user.email === email.toLowerCase())
 
 		if (foundUser && (await bcrypt.compare(password, foundUser.password))) {
 			// create token
-			const token = jwt.sign(foundUser, process.env.TOKEN_KEY, {
-				expiresIn: "2h",
-			})
+			const token = jwt.sign(
+				{ user_id: foundUser.id, email },
+				process.env.TOKEN_KEY,
+				{
+					expiresIn: "2h",
+				}
+			)
 
 			// update user's token
 			const user = {
 				...foundUser,
 				token: token,
 			}
+
 
 			// save user token
 			const response = await fetch(
@@ -101,25 +110,31 @@ app.post("/login", async (req, res) => {
 			)
 			const data = await response.json()
 			console.log(data)
-
 			res.status(200).json({ token: token })
+			return
 		}
+		console.log("niet")
 		res.status(400).send("Invalid Credentials")
+		return
 	} catch (err) {
 		console.log(err)
 	}
 })
 
 app.get("/profile", auth, async (req, res) => {
-    console.log(req.user)
-
-	res.status(200).send(req.user)
+    console.log(req.user.user_id)
+	const response = await fetch(`http://localhost:3000/users/${req.user.user_id}`)
+	const data = await response.json()
+	console.log(data)
+	res.status(200).send(data)
+	return
 })
 
 app.get("/profiles", authorize, async (req, res) => {
 	const response = await fetch("http://localhost:3000/users")
 	const data = await response.json()
 	res.status(200).send(data)
+	return
 })
 
 module.exports = app
