@@ -1,0 +1,21 @@
+export default {
+	// padding
+	PADDING_XS: 6,
+	PADDING_S: 12,
+	PADDING_M: 24,
+	PADDING_L: 48,
+	PADDING_XL: 96,
+	// margin
+	MARGIN_XS: 6,
+	MARGIN_S: 12,
+	MARGIN_M: 24,
+	MARGIN_L: 48,
+	MARGIN_XL: 96,
+    // font-size
+    FONT_PAGE_TITLE: 52,
+    FONT_SECTION_TITLE:36,
+    FONT_ARTICLE_TITLE: 24,
+    FONT_SUBTITLE: 24,
+    FONT_LABEL: 16,
+    FONT_BODY: 20
+}
