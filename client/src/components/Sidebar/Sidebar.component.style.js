@@ -25,6 +25,9 @@ export const defaultStyle = StyleSheet.create({
 	iconDark: {
 		fill: dark.COLOR_TEXT,
 	},
+	iconAccent: {
+		fill: common.CLR_ACCENT,
+	},
 	sidebarTop: {
 		position: "relative",
 		width: "100%",
