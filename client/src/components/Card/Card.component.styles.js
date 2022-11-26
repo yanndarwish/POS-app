@@ -18,6 +18,10 @@ export const styles = StyleSheet.create({
 	title: {
 		fontSize: common.FONT_ARTICLE_TITLE,
 	},
+	text: {
+		fontSize: common.FONT_BODY
+	}
+	,
 	colorDark: {
 		color: dark.COLOR_TEXT,
 	},

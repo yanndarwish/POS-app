@@ -1,5 +1,5 @@
 import { View } from "react-native"
-import LogoutDialog from "../../components/LogoutDialog/LogoutDialog"
+import LogoutDialog from "../../components/Card/LogoutCard/LogoutCard.component.jsx"
 import { useSelector } from "react-redux"
 import { styles } from "./Logout.styles"
 
@@ -7,7 +7,7 @@ const Logout = () => {
 	const theme = useSelector((state) => state.theme.theme)
 	return (
 		<View
-			styles={[
+			style={[
 				styles.container,
 				theme === "dark" ? styles.containerDark : styles.containerLight,
 			]}

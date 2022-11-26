@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { logout } from "../../redux/features/login"
+import { logout } from "../../../redux/features/login"
 import { View, Text } from "react-native"
-import { styles } from "./LogoutDialog.component.styles"
-import Button from "../Button/Button.component"
+import { styles } from "../Card.component.styles"
+import Button from "../../Button/Button.component"
 
 const LogoutDialog = ({ theme }) => {
     const loggedIn = useSelector(state => state.login.loggedIn)
@@ -31,11 +31,18 @@ const LogoutDialog = ({ theme }) => {
 						theme === "dark" ? styles.colorDark : styles.colorLight,
 					]}
 				>
-					Login
+					Logout
 				</Text>
 			</View>
 			<View style={styles.body}>
-				<Text>Are you sure you want to logout ?</Text>
+				<Text
+					style={[
+						styles.text,
+						theme === "dark" ? styles.colorDark : styles.colorLight,
+					]}
+				>
+					Are you sure you want to logout ?
+				</Text>
 			</View>
 			<View style={styles.footer}>
 				<Button title="Cancel" onPress={handleCancel}></Button>

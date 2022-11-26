@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { Text, View } from "react-native"
-import { styles } from "./LoginCard.component.styles"
-import Input from "../Input/Input.component"
-import Button from "../Button/Button.component"
-import { useGetAuthMutation } from "../../redux/services/api"
+import { styles } from "../Card.component.styles"
+import Input from "../../Input/Input.component"
+import Button from "../../Button/Button.component"
+import { useGetAuthMutation } from "../../../redux/services/api"
 
 const LoginCard = ({ theme }) => {
 	const [email, setEmail] = useState("")
