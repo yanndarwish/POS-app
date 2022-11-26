@@ -15,13 +15,18 @@ export const styles = StyleSheet.create({
 	containerDark: {
 		backgroundColor: dark.COLOR_BG_SECONDARY,
 	},
+	header: {
+		marginBottom: common.GAP / 2,
+	},
 	title: {
 		fontSize: common.FONT_ARTICLE_TITLE,
 	},
+	body: {
+		marginVertical: common.GAP / 2,
+	},
 	text: {
-		fontSize: common.FONT_BODY
-	}
-	,
+		fontSize: common.FONT_BODY,
+	},
 	colorDark: {
 		color: dark.COLOR_TEXT,
 	},
@@ -35,7 +40,8 @@ export const styles = StyleSheet.create({
 		shadowRadius: 3,
 	},
 	footer: {
+		marginTop: common.GAP / 2,
 		flexDirection: "row",
 		justifyContent: "space-between",
-	}
+	},
 })

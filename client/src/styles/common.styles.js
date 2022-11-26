@@ -11,6 +11,8 @@ export default {
 	MARGIN_M: 24,
 	MARGIN_L: 48,
 	MARGIN_XL: 96,
+	// gap
+	GAP: 24,
     // font-size
     FONT_PAGE_TITLE: 52,
     FONT_SECTION_TITLE:36,
