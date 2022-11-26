@@ -4,11 +4,11 @@ import { useSelector } from "react-redux"
 import { useGetProfileQuery } from "../../redux/services/api"
 
 const Profile = () => {
-	const token = useSelector(state => state.login.token)
+	const { data, isLoading, error } = useGetProfileQuery()
 
-	const {data, isLoading, error} = useGetProfileQuery()
-	console.log(error)
-	console.log(data)
+	const token = useSelector((state) => state.login.token)
+	const user = useSelector((state) => state.user.user)
+
 
 	return (
 		<View>
