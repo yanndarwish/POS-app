@@ -5,8 +5,18 @@ import dark from "../../styles/dark.theme.styles"
 
 export const styles = StyleSheet.create({
 	input: {
-		padding: common.PADDING_M,
+		padding: common.PADDING_S,
 		borderRadius: common.BORDER_RADIUS_M,
+		fontSize: common.FONT_BODY,
 		justifyContent: "space-between",
+		borderWidth: 1,
+	},
+	lightInput: {
+		borderColor: light.COLOR_TEXT,
+		color: light.COLOR_TEXT,
+	},
+	darkInput: {
+		borderColor: dark.COLOR_TEXT,
+		color: dark.COLOR_TEXT,
 	},
 })

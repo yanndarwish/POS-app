@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
 		marginBottom: common.GAP / 2,
 	},
 	title: {
-		fontSize: common.FONT_ARTICLE_TITLE,
+		fontSize: common.FONT_SECTION_TITLE,
 	},
 	body: {
 		marginVertical: common.GAP / 2,

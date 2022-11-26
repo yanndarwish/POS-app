@@ -4,14 +4,18 @@ import { useSelector } from "react-redux"
 import { styles } from "./Login.styles"
 
 const Login = () => {
-    const theme = useSelector(state => state.theme.theme)
+	const theme = useSelector((state) => state.theme.theme)
 
-    return (
-        <View style={[styles.container, theme === "dark" ? styles.containerDark : styles.containerLight]}>
-            <Text>Login page</Text>
-            <LoginCard theme={theme}/>
-        </View>
-    )
+	return (
+		<View
+			style={[
+				styles.container,
+				theme === "dark" ? styles.containerDark : styles.containerLight,
+			]}
+		>
+			<LoginCard theme={theme} />
+		</View>
+	)
 }
 
 export default Login
