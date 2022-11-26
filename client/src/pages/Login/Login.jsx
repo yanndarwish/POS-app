@@ -1,5 +1,5 @@
 import { Text, View } from "react-native"
-import LoginCard from "../../components/LoginCard/LoginCard.component"
+import LoginCard from "../../components/Card/LoginCard/LoginCard.component"
 import { useSelector } from "react-redux"
 import { styles } from "./Login.styles"
 

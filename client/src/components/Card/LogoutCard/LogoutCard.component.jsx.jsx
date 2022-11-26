@@ -45,8 +45,8 @@ const LogoutDialog = ({ theme }) => {
 				</Text>
 			</View>
 			<View style={styles.footer}>
-				<Button title="Cancel" onPress={handleCancel}></Button>
-				<Button title="Logout" onPress={handleLogout}></Button>
+				<Button title="Cancel" color="red" onPress={handleCancel}></Button>
+				<Button title="Logout" color="green" onPress={handleLogout}></Button>
 			</View>
 		</View>
 	)

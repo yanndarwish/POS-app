@@ -21,4 +21,9 @@ export default {
 	// border-radius
 	BORDER_RADIUS_S: 4,
 	BORDER_RADIUS_M: 6,
+	//base colors
+	CLR_ACCENT: "#7F5AF0",
+	CLR_SUCCESS: "#2CB67D",
+	CLR_WARNING: "#FAAE2B",
+	CLR_DANGER: "#EF4565",
 }

@@ -39,8 +39,8 @@ const LoginCard = ({ theme }) => {
 				<Input value={email} onChange={setEmail} />
 				<Input value={password} onChange={setPassword} secure />
 			</View>
-			<View style={styles.footer}>
-				<Button title="Login" onPress={handleLogin}></Button>
+			<View>
+				<Button title="Login" color="green" onPress={handleLogin}></Button>
 			</View>
 		</View>
 	)
