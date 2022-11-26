@@ -6,7 +6,6 @@ const Button = ({ title, color, onPress }) => {
 		onPress()
 	}
 
-	console.log(color)
 	return (
 		<TouchableOpacity
 			onPress={handlePress}
