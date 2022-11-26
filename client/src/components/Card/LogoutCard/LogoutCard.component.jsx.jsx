@@ -1,12 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../../../redux/features/login"
+import { userLogout } from "../../../redux/features/user"
 import { View, Text } from "react-native"
 import { styles } from "../Card.component.styles"
 import Button from "../../Button/Button.component"
+import { useNavigate } from "react-router-native"
 
 const LogoutDialog = ({ theme }) => {
     const loggedIn = useSelector(state => state.login.loggedIn)
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
     console.log(loggedIn)
 	const handleCancel = () => {
@@ -15,7 +18,10 @@ const LogoutDialog = ({ theme }) => {
 
 	const handleLogout = () => {
 		dispatch(logout())
+		dispatch(userLogout())
+		navigate("/login")
 	}
+
 	return (
 		<View
 			style={[

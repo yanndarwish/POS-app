@@ -9,7 +9,11 @@ const initialState = {
 const userSlice = createSlice({
 	name: "user",
 	initialState,
-	reducers: {},
+	reducers: {
+		userLogout: (state) => {
+			state = initialState
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			.addMatcher(api.endpoints.getProfile.matchFulfilled, (state, action) => {
@@ -21,4 +25,5 @@ const userSlice = createSlice({
 	},
 })
 
+export const { userLogout } = userSlice.actions
 export default userSlice.reducer
