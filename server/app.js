@@ -36,7 +36,7 @@ app.post("/register", async (req, res) => {
 			lastName: lastName,
 			email: email,
 			password: encryptedPassword,
-            isAdmin: isAdmin
+			isAdmin: isAdmin,
 		}
 
 		// create token
@@ -96,7 +96,6 @@ app.post("/login", async (req, res) => {
 				token: token,
 			}
 
-
 			// save user token
 			const response = await fetch(
 				`http://localhost:3000/users/${foundUser.id}`,
@@ -122,18 +121,31 @@ app.post("/login", async (req, res) => {
 })
 
 app.get("/profile", auth, async (req, res) => {
-    console.log(req.user.user_id)
-	const response = await fetch(`http://localhost:3000/users/${req.user.user_id}`)
+	const response = await fetch(
+		`http://localhost:3000/users/${req.user.user_id}`
+	)
 	const data = await response.json()
-	console.log(data)
-	res.status(200).send(data)
+
+	let clone = Object.assign({}, data)
+	delete clone.password
+	delete clone.token
+
+	res.status(200).send({ user: clone })
 	return
 })
 
-app.get("/profiles", authorize, async (req, res) => {
+app.post("/profiles", authorize, async (req, res) => {
+	
 	const response = await fetch("http://localhost:3000/users")
 	const data = await response.json()
-	res.status(200).send(data)
+	let clone = Object.assign([], data)
+
+	clone && clone.forEach(item => {
+		delete item.password
+		delete item.token
+	})
+
+	res.status(200).send({ users: clone })
 	return
 })
 

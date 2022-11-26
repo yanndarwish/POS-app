@@ -16,7 +16,7 @@ export const api = createApi({
 			return headers
 		},
 	}),
-	tagTypes: ["Profile"],
+	tagTypes: ["Profiles", "Profile"],
 	endpoints: (builder) => ({
 		getAuth: builder.mutation({
 			query: (payload) => ({
@@ -32,8 +32,16 @@ export const api = createApi({
 			}),
 			providesTags: ["Profile"],
 		}),
+		getProfiles: builder.mutation({
+			query: (payload) => ({
+				url: "profiles",
+				method: "POST",
+				body: payload
+			}),
+			providesTags: ["Profiles"]
+		})
 	}),
 })
 
-export const { useGetAuthMutation, useGetProfileQuery } = api
+export const { useGetAuthMutation, useGetProfileQuery, useGetProfilesMutation } = api
 export default api

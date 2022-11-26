@@ -14,7 +14,7 @@ const authorize = (req, res, next) => {
 		const decoded = jwt.verify(token, config.TOKEN_KEY)
 		req.user = decoded
 
-		if (!req.user.isAdmin) {
+		if (!req.body.user.isAdmin) {
 			return res.status(401).send("Unauthorized")
 		}
 	} catch (err) {
