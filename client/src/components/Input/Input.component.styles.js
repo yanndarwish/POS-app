@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
 		fontSize: common.FONT_BODY,
 		justifyContent: "space-between",
 		borderWidth: 1,
+		height: 60
 	},
 	lightInput: {
 		borderColor: light.COLOR_TEXT,

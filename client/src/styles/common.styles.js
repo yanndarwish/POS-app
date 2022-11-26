@@ -48,7 +48,10 @@ export const shared = StyleSheet.create({
 		backgroundColor: dark.COLOR_BG_PRIMARY,
 		color: dark.COLOR_TEXT,
 	},
-	header: {},
+	header: {
+		flexDirection: "row",
+		alignItems: "flex-start"
+	},
 	pageTitle: {
 		fontSize: style.FONT_PAGE_TITLE,
 		fontWeight: "bold",
@@ -62,9 +65,23 @@ export const shared = StyleSheet.create({
 	},
 	searchSection: {
 		flexDirection: "row",
+		marginBottom: style.GAP * 2,
+	},
+	spaceBetween: {
+		justifyContent: "space-between",
+	},
+	searchSectionLeft: {
+		flexDirection: "row",
+	},
+	searchSectionRight: {
+		flexDirection: "row",
 	},
 	body: {
 		padding: style.PADDING_M,
+		shadowColor: "#171717",
+		shadowOffset: { width: 2, height: 4 },
+		shadowOpacity: 0.2,
+		shadowRadius: 3,
 	},
 	lightBody: {
 		backgroundColor: light.COLOR_BG_SECONDARY,

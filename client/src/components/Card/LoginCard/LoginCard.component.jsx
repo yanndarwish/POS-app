@@ -4,12 +4,14 @@ import { styles } from "../Card.component.styles"
 import Input from "../../Input/Input.component"
 import Button from "../../Button/Button.component"
 import { useGetAuthMutation } from "../../../redux/services/api"
+import { useNavigate } from "react-router-native"
 import commonStyles from "../../../styles/common.styles"
 
 const LoginCard = ({ theme }) => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const [getAuth, res] = useGetAuthMutation()
+	const navigate = useNavigate()
 
 	const handleLogin = async () => {
 		const payload = {
@@ -17,6 +19,7 @@ const LoginCard = ({ theme }) => {
 			password: password,
 		}
 		await getAuth(payload)
+		navigate("/profile")
 	}
 	return (
 		<View
