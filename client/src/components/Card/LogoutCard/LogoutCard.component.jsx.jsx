@@ -7,13 +7,12 @@ import Button from "../../Button/Button.component"
 import { useNavigate } from "react-router-native"
 
 const LogoutDialog = ({ theme }) => {
-    const loggedIn = useSelector(state => state.login.loggedIn)
+	const loggedIn = useSelector((state) => state.login.loggedIn)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
-    console.log(loggedIn)
 	const handleCancel = () => {
-		console.log("toz")
+		navigate("/dashboard")
 	}
 
 	const handleLogout = () => {

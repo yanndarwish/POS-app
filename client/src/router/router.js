@@ -18,7 +18,7 @@ export default function Router() {
 				<StatusBar style="auto" />
 				<Routes>
 					<Route path="/" element={<Root />}>
-						<Route path="/" element={<Home />} />
+						<Route path="/" element={<Login />} />
 						<Route path="login" element={<Login />} />
 						<Route path="pos" element={<Pos />} />
 						<Route path="dashboard" element={<Dashboard />} />

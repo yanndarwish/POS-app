@@ -12,7 +12,6 @@ const Sidebar = () => {
 	const loggedIn = useSelector((state) => state.login.loggedIn)
 	const dispatch = useDispatch()
 
-	console.log(uri)
 	const handleTheme = () => {
 		dispatch(toggleTheme())
 	}
